@@ -9,9 +9,10 @@
 # }
 
 
-
+# https://github.com/siva2j22/terraform-aws-sg
 module "sg" {
     count = length(var.sg_names)
+    #source = "git::https://github.com/daws-86s/terraform-aws-sg.git?ref=main"
     source = "git::https://github.com/siva2j22/terraform-aws-sg.git?ref=main"
     project_name =var.project_name
     environment = var.environment
