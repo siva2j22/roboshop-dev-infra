@@ -12,6 +12,15 @@ variable "sg_names" {
     # backend
     "catalogue" , "user" , "cart" ,"shipping" , "payment",
     # frontend
-    "frontend"]
+    "frontend",
+     # bastion
+    "bastion",
+    # frontend load balancer
+    "frontend_alb",
+    # Backend ALB
+    "backend_alb",
+    "open_vpn"
+    ]
+
     
 }

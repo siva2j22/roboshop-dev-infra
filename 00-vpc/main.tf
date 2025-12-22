@@ -22,7 +22,7 @@ module "vpc" {
     database_subnets_cidrs = var.database_subnets_cidrs
 
     #peering false means no access to other vpc
-   # is_peering_required = false
+    is_peering_required = true
 }
 
 
