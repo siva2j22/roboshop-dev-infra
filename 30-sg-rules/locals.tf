@@ -4,4 +4,7 @@ locals {
   #public_subnets_ids = data.aws_ssm_parameter.public_subnets_ids.value
   mongodb_sg_id = data.aws_ssm_parameter.mongodb_sg_id.value 
   redis_sg_id = data.aws_ssm_parameter.redis_sg_id.value 
+  rabbitmq_sg_id = data.aws_ssm_parameter.rabbitmq_sg_id.value 
+  mysql_sg_id = data.aws_ssm_parameter.mysql_sg_id.value
+  
 }
