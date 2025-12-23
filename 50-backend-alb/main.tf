@@ -5,7 +5,7 @@ resource "aws_lb" "backend_alb" {
   security_groups    = [local.backend_alb_sg_id]
   subnets            = local.private_subnet_ids
 
-  enable_deletion_protection = true  # prevents acidentail prevention from UI we can not delte
+  enable_deletion_protection = false  # prevents acidentail prevention from UI we can not delte
 
   tags = merge (
     local.common_tags,
@@ -17,7 +17,7 @@ resource "aws_lb" "backend_alb" {
 
 # backend ALB listeners on port number 80
 # arn --> amazon resource name
-resource "aws_lb_listener" "front_end" {
+resource "aws_lb_listener" "backend_alb" {
   load_balancer_arn = aws_lb.backend_alb.arn
   port              = "80"
   protocol          = "HTTP"
