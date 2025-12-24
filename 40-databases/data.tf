@@ -27,9 +27,9 @@ data "aws_ssm_parameter" "redis_sg_id" {
     name = "/${var.project_name}/${var.environment}/redis_sg_id"
 }
 
-#  data "aws_ssm_parameter" "rabbitmq_subnet_id" {
-#     name = "/${var.project_name}/${var.environment}/rabbitmq_subnet_id"
-# }
+ data "aws_ssm_parameter" "rabbitmq_subnet_id" {
+    name = "/${var.project_name}/${var.environment}/rabbitmq_subnet_id"
+}
 
 # data "aws_ssm_parameter" "mysql_subnet_id" {
 #     name = "/${var.project_name}/${var.environment}/mysql_subnet_id"
