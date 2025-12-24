@@ -40,6 +40,7 @@ resource "terraform_data" "mongodb" {
     ]
     
   }
+}
 
 # }
 # # ---------------------redis --start-----------------
