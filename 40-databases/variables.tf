@@ -24,3 +24,6 @@ variable "sg_names" {
 
     
 }
+
+
+  
