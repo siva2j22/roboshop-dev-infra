@@ -145,8 +145,12 @@ resource "aws_instance" "mysql" {
 
 resource "aws_iam_instance_profile" "mysql" {
   name = "mysql"
-  role = "EC2SSMParameterReadNew  "
+  role = "EC2SSMParameterReadNew"
 }
+# resource "aws_iam_instance_profile" "mysql" {
+#   name = "mysql"
+#   role = "EC2SSMParameterReadNew  "
+# }
 resource "terraform_data" "mysql" {
   triggers_replace = [
     aws_instance.mysql.id
