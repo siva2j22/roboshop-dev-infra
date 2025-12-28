@@ -25,7 +25,7 @@ variable "sg_names" {
 }
 
 variable "zone_id" {
-    default = "Z0948150OFPSYTNVYZOY"
+    default = "Z0462684FV5U34P7ASOD"
 }
 
 variable "domain_name" {
