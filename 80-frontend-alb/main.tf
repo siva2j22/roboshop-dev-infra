@@ -1,4 +1,4 @@
-resource "aws_lb" "frontend-alb" {
+resource "aws_lb" "frontend_alb" {
   name               = "${local.common_name_suffix}-frontend-alb" # roboshop-dev-backend-alb
   internal           = false
   load_balancer_type = "application"
@@ -16,7 +16,7 @@ resource "aws_lb" "frontend-alb" {
 }
 
 resource "aws_lb_listener" "frontend_alb" {
-  load_balancer_arn = aws_lb.frontend_alb.arn
+  load_balancer_arn = aws_lb.frontend-alb.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-TLS13-1-3-2021-06"
@@ -41,8 +41,8 @@ resource "aws_route53_record" "frontend_alb" {
 
   alias {
     # These are ALB details, not our domain details
-    name                   = var.domain_name
-    zone_id                = var.zone_id
+    name                   = aws_lb.frontend_alb.domain_name
+    zone_id                = aws_lb.frontend_alb.zone_id
     evaluate_target_health = true
   }
 }
