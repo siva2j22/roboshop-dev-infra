@@ -93,6 +93,8 @@ resource "aws_launch_template" "catalogue" {
 
   vpc_security_group_ids = [local.catalogue_sg_id]
 
+  
+
   # when we run terraform apply again, a new version will be created with new AMI ID
   update_default_version = true
 
@@ -213,6 +215,7 @@ resource "terraform_data" "catalogue_local" {
     command = "aws ec2 terminate-instances --instance-ids ${aws_instance.catalogue.id}"
   }
 }
+
 
 
 
